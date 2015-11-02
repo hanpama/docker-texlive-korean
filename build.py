@@ -4,6 +4,10 @@
 Builder
 
 Build sphinx korean document with hanpama/texlive-korean image!
+
+::
+   $ ./build.py latexpdf
+
 """
 
 import argparse
@@ -21,7 +25,7 @@ if __name__ == "__main__":
 
     os.system("""docker run --name={project_name} -it -v {cwd}:/var/code \
     hanpama/texlive-korean make {make_args}""".format(
-        project_name=project_name, cwd=cwd, make_args=make_args)
-    )
+        project_name=project_name, cwd=cwd, make_args=make_args
+    ))
     print("DONE")
     os.system("docker rm {project_name}".format(project_name=conf.pfname))
