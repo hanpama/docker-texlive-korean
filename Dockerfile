@@ -1,8 +1,7 @@
 FROM ubuntu:15.10
 
 RUN apt-get update; \
-    apt-get install -y xzdec texlive texlive-xetex texlive-luatex \
-    texlive-lang-cjk texlive-lang-korean texlive-full; \
+    apt-get install -y xzdec texlive texlive-lang-korean; \
     apt-get -y clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
 
